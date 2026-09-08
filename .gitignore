@@ -1,0 +1,28 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editors / IDEs
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+*~
+
+# Temporary / generated files
+*.tmp
+*.temp
+*.log
+
+# Local environment files
+.env
+.env.*
+
+# Node tooling (if used for OpenAPI validation/generation)
+node_modules/
+
+# Generated documentation / build output
+dist/
+build/
+coverage/
