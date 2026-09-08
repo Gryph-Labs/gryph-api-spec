@@ -1,11 +1,11 @@
 {
-  "name": "@gryph-labs/gryph-api-spec",
+  "name": "@gryph-labs/phoenix-api-spec",
   "version": "1.0.0",
   "private": true,
   "description": "OpenAPI specification for the Gryph Labs Phoenix API",
   "scripts": {
     "lint": "redocly lint",
-    "bundle": "redocly bundle src/base.yaml -o gryph-api-spec.yaml",
+    "bundle": "redocly bundle src/base.yaml -o phoenix-api-spec.yaml",
     "build": "npm run lint && npm run bundle"
   },
   "engines": {
