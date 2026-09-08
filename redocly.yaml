@@ -1,5 +1,5 @@
 apis:
-  gryph@v1:
+  phoenix@v1:
     root: ./src/base.yaml
 
 extends:

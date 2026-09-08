@@ -1,35 +1,40 @@
-# Gryph API Specification
+# Phoenix API Specification
 
-This repository contains the versioned OpenAPI specification for the Gryph Labs Phoenix API.
+This repository contains the OpenAPI specification for the Phoenix API.
 
-## Branching model
+Phoenix API is the HTTP interface used to connect external clients to Gryph Labs systems through a stable, controlled contract. It is intended for clients such as custom GPTs using GPT Actions, other AI models and agents, internal Gryph Labs services, and future applications that need to communicate with Phoenix or other Gryph systems.
 
-The active major API version is the default branch for this repository.
+The API is deliberately separate from any one AI provider or protocol. MCP may be used as an integration layer in some cases, but it is not a requirement for using Phoenix API. Clients should be able to integrate through normal HTTPS and OpenAPI-compatible tooling.
 
-- `v1` — active version 1 specification
-- Feature branches use `feature/<Jira issue key>`, for example `feature/PHX-2`
-- Changes are merged into the active version branch through pull requests
-- Future breaking API versions will use new major-version branches such as `v2`
+## What this repository contains
 
-## Specification structure
+The OpenAPI source is kept under `src/` and split into smaller files for paths, schemas, responses, and other reusable components. Redocly validates those files and bundles them into `phoenix-api-spec.yaml` at the repository root.
 
-Human-maintained OpenAPI source lives under `src/`. Redocly validates and bundles that modular source into `gryph-api-spec.yaml` at the repository root.
-
-The initial test endpoint is:
-
-- `GET /api/status`
+The bundled file is the version of the contract intended for consumers and tooling.
 
 ## Development
 
-Requires Node.js 24 LTS.
+Node.js 24 LTS is required.
+
+Install dependencies:
 
 ```bash
 npm install
+```
+
+Validate the specification:
+
+```bash
 npm run lint
+```
+
+Bundle the specification:
+
+```bash
 npm run bundle
 ```
 
-Run both validation and bundling with:
+Run validation and bundling together:
 
 ```bash
 npm run build
@@ -41,8 +46,4 @@ The contents of this repository are licensed under the Apache License 2.0. See [
 
 Copyright © Gryph Labs.
 
-## Branding and trademarks
-
-The Apache License 2.0 covers the specification and other licensed material in this repository. It does not grant permission to use Gryph Labs branding, product names, logos, trademarks, or trade dress.
-
-Forks and derivative distributions must use their own branding and must not imply endorsement by, sponsorship from, or affiliation with Gryph Labs. The names “Gryph Labs” and “Phoenix,” along with associated logos and branding, remain the property of Gryph Labs unless separate written permission is granted.
+The license does not grant permission to use Gryph Labs or Phoenix names, logos, branding, or other trademarks. Forks and derivative distributions must use their own branding and must not imply endorsement by, sponsorship from, or affiliation with Gryph Labs without written permission.

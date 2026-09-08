@@ -1,13 +1,13 @@
 openapi: 3.1.0
 info:
-  title: Gryph Labs Phoenix API
+  title: Phoenix API
   description: >-
     Controlled HTTPS API for Gryph Labs systems. The API is designed for use by
     custom GPTs through GPT Actions and by other AI models and clients.
   version: 1.0.0
 servers:
   - url: https://api.gryphlabs.com
-    description: Gryph Labs API
+    description: Phoenix API
 tags:
   - name: System
     description: API health and status operations.
