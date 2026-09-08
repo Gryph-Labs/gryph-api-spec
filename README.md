@@ -1,4 +1,4 @@
-# Gryph API Specification
+# Phoenix API Specification
 
 This repository contains the versioned OpenAPI specification for the Gryph Labs Phoenix API.
 
@@ -13,7 +13,7 @@ The active major API version is the default branch for this repository.
 
 ## Specification structure
 
-Human-maintained OpenAPI source lives under `src/`. Redocly validates and bundles that modular source into `gryph-api-spec.yaml` at the repository root.
+Human-maintained OpenAPI source lives under `src/`. Redocly validates and bundles that modular source into `phoenix-api-spec.yaml` at the repository root.
 
 The initial test endpoint is:
 
