@@ -12,14 +12,6 @@ The OpenAPI source is kept under `src/` and split into smaller files for paths, 
 
 The bundled file is the version of the contract intended for consumers and tooling.
 
-The first endpoint in the API is:
-
-```http
-GET /api/status
-```
-
-It exists as a simple end-to-end check that the API implementation is running and matches the published contract.
-
 ## Development
 
 Node.js 24 LTS is required.
