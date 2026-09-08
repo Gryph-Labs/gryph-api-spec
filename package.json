@@ -1,0 +1,17 @@
+{
+  "name": "@gryph-labs/gryph-api-spec",
+  "version": "1.0.0",
+  "private": true,
+  "description": "OpenAPI specification for the Gryph Labs Phoenix API",
+  "scripts": {
+    "lint": "redocly lint",
+    "bundle": "redocly bundle src/base.yaml -o gryph-api-spec.yaml",
+    "build": "npm run lint && npm run bundle"
+  },
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "devDependencies": {
+    "@redocly/cli": "2.51.2"
+  }
+}
