@@ -1,0 +1,64 @@
+openapi: 3.1.0
+info:
+  title: Gryph Labs Phoenix API
+  description: >-
+    Controlled HTTPS API for Gryph Labs systems. The API is designed for use by
+    custom GPTs through GPT Actions and by other AI models and clients.
+  version: 1.0.0
+servers:
+  - url: https://api.gryphlabs.com
+    description: Gryph Labs API
+tags:
+  - name: System
+    description: API health and status operations.
+paths:
+  /api/status:
+    get:
+      tags:
+        - System
+      summary: Get API status
+      description: Returns the current availability of the Phoenix API.
+      operationId: getApiStatus
+      responses:
+        '200':
+          description: API is available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusResponse'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+components:
+  schemas:
+    StatusResponse:
+      type: object
+      additionalProperties: false
+      required:
+        - status
+      properties:
+        status:
+          type: string
+          description: Current API status.
+          examples:
+            - ok
+        version:
+          type: string
+          description: Deployed API version, when available.
+          examples:
+            - 1.0.0
+    ErrorResponse:
+      type: object
+      additionalProperties: false
+      required:
+        - message
+      properties:
+        message:
+          type: string
+          description: Human-readable error message.
+  responses:
+    InternalServerError:
+      description: Internal server error.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'

@@ -1,0 +1,10 @@
+apis:
+  gryph@v1:
+    root: ./src/base.yaml
+
+extends:
+  - recommended
+
+rules:
+  no-unresolved-refs: error
+  operation-operationId: error

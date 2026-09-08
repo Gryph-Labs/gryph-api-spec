@@ -1,0 +1,15 @@
+get:
+  tags:
+    - System
+  summary: Get API status
+  description: Returns the current availability of the Phoenix API.
+  operationId: getApiStatus
+  responses:
+    '200':
+      description: API is available.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas.yaml#/StatusResponse
+    '500':
+      $ref: ../components/responses.yaml#/InternalServerError
