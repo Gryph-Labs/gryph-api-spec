@@ -8,13 +8,19 @@ The API is deliberately separate from any one AI provider or protocol. MCP may b
 
 ## What this repository contains
 
-The OpenAPI source is kept under `src/` and split into smaller files for paths, schemas, responses, and other reusable components. Redocly validates those files and bundles them into `phoenix-api-spec.yaml` at the repository root.
+The OpenAPI source is kept under `src/` and split into smaller files for paths, schemas, responses, and other reusable components. Shared Gryph Labs OpenAPI components are consumed from the `gryph-common-spec` submodule under `common-spec/`. Redocly validates those files and bundles them into `phoenix-api-spec.yaml` at the repository root.
 
-The bundled file is the version of the contract intended for consumers and tooling.
+The bundled file is the version of the contract intended for consumers and tooling and remains self-contained.
 
 ## Development
 
 Node.js 24 LTS is required.
+
+Initialize the shared spec submodule:
+
+```bash
+git submodule update --init --remote
+```
 
 Install dependencies:
 
