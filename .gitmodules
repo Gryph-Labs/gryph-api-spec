@@ -1,0 +1,4 @@
+[submodule "common-spec"]
+	path = common-spec
+	url = https://github.com/Gryph-Labs/gryph-common-spec.git
+	branch = v1
