@@ -50,11 +50,37 @@ components:
       type: object
       additionalProperties: false
       required:
+        - status
         - message
+        - errors
+        - timestamp
       properties:
+        status:
+          type: integer
+          format: int32
+          description: HTTP status code returned for the error.
+          examples:
+            - 400
         message:
           type: string
-          description: Human-readable error message.
+          description: Summary of the error.
+          examples:
+            - Validation failed.
+        errors:
+          type: array
+          description: Detailed error messages associated with the failure.
+          items:
+            type: string
+          examples:
+            -
+              - Password must be at least 12 characters.
+              - Password must contain at least 1 uppercase character.
+        timestamp:
+          type: string
+          format: date-time
+          description: Time the error response was created.
+          examples:
+            - '2026-09-09T19:28:00Z'
   responses:
     InternalServerError:
       description: Internal server error.
