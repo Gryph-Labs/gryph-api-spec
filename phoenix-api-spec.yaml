@@ -63,7 +63,7 @@ components:
             - 400
         message:
           type: string
-          description: Human-readable summary of the error.
+          description: Summary of the error.
           examples:
             - Validation failed.
         errors:
